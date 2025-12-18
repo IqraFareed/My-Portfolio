@@ -24,7 +24,7 @@ const Header = () => {
           {links?.map((link) => (
             <motion.li
               className="h-3/4 flex items-center justify-center relative"
-              key={link.hash}
+              key={link?.hash}
               initial={{ y: -100, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
             >
@@ -33,18 +33,18 @@ const Header = () => {
                   "flex w-full items-center justify-center  px-3 py-3   hover:text-gray-950 transition dark:text-gray-500 dark:hover:text-gray-300",
                   {
                     "text-gray-950 dark:text-gray-200":
-                      activeSection === link.name,
+                      activeSection === link?.name,
                   }
                 )}
-                href={link.hash}
+                href={link?.hash}
                 onClick={() => {
                   setTimeOfLastClick(Date.now());
-                  setActiveSection(link.name);
+                  setActiveSection(link?.name);
                 }}
               >
                 {" "}
-                {link.name}
-                {activeSection === link.name && (
+                {link?.name}
+                {activeSection === link?.name && (
                   <motion.span
                     className="bg-gray-100 rounded-full absolute inset-0 -z-10 dark:bg-gray-800"
                     layoutId="activeSection"

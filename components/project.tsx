@@ -41,6 +41,7 @@ const Project = ({
           target="_blank"
           rel="noopener noreferrer"
           className="my-1 font-normal text-blue-500 underline hover:text-blue-600 transition-colors"
+          prefetch={false}
         >
           {link}
         </Link>
