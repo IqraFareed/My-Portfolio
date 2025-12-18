@@ -2,8 +2,8 @@ import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
-import code from "@/public/code.jpg";
-import matrix from "@/public/matrix-356024_1280.webp";
+import ts from "@/public/tripshepherd.png";
+import robor from "@/public/robor.png";
 import coding from "@/public/coding.webp";
 
 export const links = [
@@ -35,7 +35,7 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: "React js developer",
+    title: "Associate Software Engineer",
     company: "Naxxa consulting",
     description:
       "In my last year of univeristy I started my internship in Naxxa consulting and then promoted to Associate engineer",
@@ -51,36 +51,30 @@ export const experiencesData = [
     date: "2022-2023",
   },
   {
-    title: "Front end Developer",
-    company: "App in snap",
+    title: "Senior Front end Developer",
+    company: "Tripshepherd",
     description:
-      "Worked on projects such as Mediko, Car Parking, Car Sharing Web application, and JS Remittance App.",
+      "Worked on product called BOAT App 	Central availability & reservation platform unifying inventory, dynamic pricing and capacity rules for maritime products",
     icon: React.createElement(FaReact),
-    date: "2023 - present",
+    date: "2024 - 2025",
   },
 ] as const;
 
 export const projectsData = [
   {
-    title: "J-ace",
+    title: "BOAT APP",
     description:
-      "I worked as a react-js developer on this home remitance application where the remittance will be delivered to home of beneficiary.",
-    tags: ["React", "Next.js", "Material-UI", "RTK", "Axios"],
-    imageUrl: code,
+      "I worked as a next-js developer on this platform  that  provide Central availability & reservation platform unifying inventory, dynamic pricing and capacity rules for maritime products.",
+    tags: ["firebase", "Next.js", "tailwind", "AWS", "Axios"],
+    imageUrl: ts,
+    link: "boat.tripshepherd.com",
   },
   {
-    title: "Merchant Portal",
-    description:
-      "It's a rich project basically handles all the data and functionalties related to the merchants associated with qisstpay ",
-    tags: [
-      "React",
-      "TypeScript",
-      "Next.js",
-      "Tailwind",
-      "Redux Toolkit",
-      "Context Api",
-    ],
-    imageUrl: matrix,
+    title: "Robor Website",
+    description: "It's a responsive website for a saas based startup",
+    tags: ["Next.js", "Tailwind", "framer motion"],
+    imageUrl: robor,
+    link: "https://robor.systems/",
   },
   {
     title: "Tely Md",
@@ -88,6 +82,7 @@ export const projectsData = [
       "A public web app for Online medical consult . It connects doctors and pateints remotely. It's a new way of medicie",
     tags: ["React", "Material ui", "Redux", "Tailwind", "Framer"],
     imageUrl: coding,
+    link: "",
   },
 ] as const;
 

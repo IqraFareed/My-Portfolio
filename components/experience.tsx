@@ -10,6 +10,7 @@ import {
 import "react-vertical-timeline-component/style.min.css";
 import { useSectionInView } from "@/lib/hooks";
 import { useTheme } from "@/context/theme-context";
+import Link from "next/link";
 const WorkIcon = () => <></>;
 const Experience = () => {
   const { theme, toggleTheme } = useTheme();
@@ -36,7 +37,7 @@ const Experience = () => {
                     ? "0.4rem solid #9ca3af"
                     : "0.4rem solid rgba(255,255,255,0.5)",
               }}
-              date={data?.date}
+              date={data?.title}
               icon={data.icon}
               iconStyle={{
                 background:
@@ -44,7 +45,6 @@ const Experience = () => {
                 fontSize: "1.5rem",
               }}
             >
-              <h3 className="font-semibold capitalize">{data?.title}</h3>
               <p className="font-normal !mt-0">{data?.company}</p>
               <p className="!mt-1 !font-normal text-gray-700 dark:text-white">
                 {data?.description}

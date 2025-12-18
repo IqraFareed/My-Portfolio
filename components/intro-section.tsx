@@ -66,19 +66,20 @@ const IntroSection = () => {
         </div>
       </div>
       <motion.h1
-        className=" mb-10 mt-2 px-4 text-xl font-medium !leading-[1.5] sm:text-3xl"
+        className="mb-10 mt-2 px-4 text-xl font-medium !leading-[1.5] sm:text-3xl"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <span className="">{`Hello `}</span>
-        {`I'm a `} <span className="font-bold"> front-end</span> developer based
-        in Islamabad Pakistan, with
-        <span className="'font-bold"> 3 years</span> of experience in React
-        js.My main focus these days is building accessible user interfaces.
-        {` I've done BS in software engineering from COMSATS university`}. I
-        enjoy building various kinds of sites. My focus is{" "}
-        <span className="underline">React.js (Next.js)</span>
+        <span>Hello,</span> I am a{" "}
+        <span className="font-bold">web developer</span> based in the USA with{" "}
+        <span className="font-bold">5 years</span> of experience in React.js and
+        Next.js. My main focus is building accessible, user-friendly interfaces.
+        I am currently pursuing my Master’s in Computer Science at the
+        University of Louisiana. I enjoy creating a wide range of web
+        experiences, and my primary expertise lies in{" "}
+        <span className="underline">React.js (Next.js)</span>.
       </motion.h1>
+
       <motion.div
         className="flex flex-col sm:flex-row items-center justify-center px-4 text-md font-medium gap-3"
         initial={{ opacity: 0, y: 100 }}
@@ -100,7 +101,7 @@ const IntroSection = () => {
 
         <Link
           href={
-            "https://drive.google.com/file/d/1OlngCiU7phEcVjVJtwmUfEBIB_dBBMRA/view"
+            "https://drive.google.com/file/d/1my6Gc6Rg6qJtlzmUvdgJsM5qW6eAhFT-/view?usp=sharing"
           }
           target="_blank"
           download
