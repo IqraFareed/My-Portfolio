@@ -15,7 +15,7 @@ const Contact = () => {
     <motion.section
       id="contact"
       ref={ref}
-      className="relative mb-24 sm:mb-32 w-[min(100%,40rem)] text-center scroll-mt-[20rem]"
+      className="relative mb-24 sm:mb-32 w-[min(100%,40rem)] text-center scroll-mt-[10rem]"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
