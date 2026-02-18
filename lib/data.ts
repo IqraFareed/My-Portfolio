@@ -96,14 +96,10 @@ export const skillsData = [
   "CSS",
   "React.js",
   "Next.js",
-  "Redux Toolkit",
-  "jQuery",
+  "Redux ",
   "Tailwind CSS",
 
   "Framer Motion",
-  "GSAP",
-  "ApexCharts",
-  "PrimeReact",
 
   // Backend
   "Node.js",
@@ -113,8 +109,6 @@ export const skillsData = [
   "RESTful APIs",
   "GraphQL",
   "WebSockets",
-
-  "AWS AppSync",
   "Axios",
   "React Query",
 
@@ -130,7 +124,7 @@ export const skillsData = [
 
   // Core Concepts
   "Data Structures",
-  "Debugging",
+  "Unit testing",
   "Web Optimization",
   "Agile/SCRUM",
 ] as const;
