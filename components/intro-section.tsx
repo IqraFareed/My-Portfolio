@@ -17,7 +17,7 @@ const IntroSection = () => {
   return (
     <motion.section
       ref={ref}
-      className="mb-28 max-w-[50rem] text-center
+      className="mb-28 max-w-[70rem] text-center
      sm:mb-0 "
     >
       <div
@@ -71,13 +71,16 @@ const IntroSection = () => {
         animate={{ opacity: 1, y: 0 }}
       >
         <span>Hello,</span> I am a{" "}
-        <span className="font-bold">web developer</span> based in the USA with{" "}
-        <span className="font-bold">5 years</span> of experience in React.js and
-        Next.js. My main focus is building accessible, user-friendly interfaces.
-        I am currently pursuing my Master’s in Computer Science at the
-        University of Louisiana. I enjoy creating a wide range of web
-        experiences, and my primary expertise lies in{" "}
-        <span className="underline">React.js (Next.js)</span>.
+        <span className="font-bold">Software Engineer</span> based in the USA
+        with <span className="font-bold">5+ years</span> of experience building
+        scalable web applications. I specialize in designing reliable,
+        production-ready systems using modern JavaScript frameworks and backend
+        services. My work spans front-end architecture, API integrations, and
+        performance optimization. I am currently pursuing my Master’s in
+        Computer Science at the University of Louisiana, where I continue
+        strengthening my software engineering principles. My primary expertise
+        includes{" "}
+        <span className="underline">React.js, Next.js, and Node.js</span>
       </motion.h1>
 
       <motion.div
