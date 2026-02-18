@@ -24,20 +24,37 @@ const Skills = () => {
     <section
       ref={ref}
       id="skills"
-      className="mb-28 max-w-[53rem] scroll-mt-28 text-center sm:mb-40"
+      className="mb-28 w-[73rem] scroll-mt-28 text-center sm:mb-40"
     >
       <SectionHeading>Skills I Have</SectionHeading>
-      <ul className="flex flex-wrap justify-center gap-2 text-lg text-gray-800">
+      <ul
+        className="  mt-12
+  grid
+  grid-cols-2
+  sm:grid-cols-3
+  md:grid-cols-4
+  lg:grid-cols-6
+  gap-4
+  text-sm"
+      >
         {skillsData.map((skill, index) => (
           <motion.li
-            className="bg-white border border-black/[0.1] rounded-xl
-             px-5 py-2 dark:bg-white/10 dark:text-white/80"
             key={index}
             variants={fadeInAnimationsVariants}
             initial="initial"
             whileInView="animate"
-            // viewport={{ once: true }}
             custom={index}
+            className="
+        bg-white/5
+        border border-white/10
+        backdrop-blur-xl
+        rounded-2xl
+        px-6 py-4
+        text-white
+        shadow-[0_0_30px_rgba(168,85,247,0.15)]
+        hover:shadow-[0_0_40px_rgba(219,39,119,0.35)]
+        transition-all duration-300
+      "
           >
             {skill}
           </motion.li>

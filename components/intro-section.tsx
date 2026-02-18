@@ -4,7 +4,6 @@ import Image from "next/image";
 import profile from "@/public/profile.jpeg";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { BsArrowRight, BsLinkedin } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
 
 import { useSectionInView } from "@/lib/hooks";
@@ -72,8 +71,8 @@ const IntroSection = () => {
       >
         <span>Hello,</span> I am a{" "}
         <span className="font-bold">Software Engineer</span> based in the USA
-        with <span className="font-bold">5+ years</span> of experience building
-        scalable web applications. I specialize in designing reliable,
+        with <span className="font-bold">over 5 years</span> of experience
+        building scalable web applications. I specialize in designing reliable,
         production-ready systems using modern JavaScript frameworks and backend
         services. My work spans front-end architecture, API integrations, and
         performance optimization. I am currently pursuing my Master’s in

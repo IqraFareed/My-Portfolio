@@ -87,18 +87,50 @@ export const projectsData = [
 ] as const;
 
 export const skillsData = [
-  "HTML",
-  "CSS",
+  // Languages
   "JavaScript",
   "TypeScript",
-  "React",
+
+  // Frontend
+  "HTML",
+  "CSS",
+  "React.js",
   "Next.js",
-  "Git",
-  "Tailwind",
-  "MongoDB",
-  "Redux",
-  "GraphQL APIS",
-  "REST APIS",
+  "Redux Toolkit",
+  "jQuery",
+  "Tailwind CSS",
+
   "Framer Motion",
-  " Agile Methodologies",
+  "GSAP",
+  "ApexCharts",
+  "PrimeReact",
+
+  // Backend
+  "Node.js",
+  "Express.js",
+
+  // APIs & Realtime
+  "RESTful APIs",
+  "GraphQL",
+  "WebSockets",
+
+  "AWS AppSync",
+  "Axios",
+  "React Query",
+
+  // Databases
+  "MongoDB",
+  "Firebase",
+
+  // Cloud & DevOps
+  "AWS",
+
+  // Tools
+  "Git",
+
+  // Core Concepts
+  "Data Structures",
+  "Debugging",
+  "Web Optimization",
+  "Agile/SCRUM",
 ] as const;
