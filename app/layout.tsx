@@ -26,8 +26,7 @@ export default function RootLayout({
         className={`
            ${inter.className}
     relative min-h-screen
-    bg-gradient-to-br
-    from-[#1a0f38] via-[#24124a] to-[#613a9b]
+    bg-gradient-to-br from-[#0f0f0f] via-[#1a1a1a] to-[#0a0520]
     text-gray-100
     pt-28 sm:pt-36
     overflow-x-hidden
@@ -52,7 +51,7 @@ export default function RootLayout({
             absolute top-[5rem] left-[-15rem] -z-10
             h-[40rem] w-[40rem]
             rounded-full
-            bg-[#613a9b]
+           bg-[#130824]
             blur-[150px]
             animate-pulse
           "

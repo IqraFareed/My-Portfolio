@@ -47,7 +47,6 @@ const Project = ({
         hover:shadow-[0_0_60px_rgba(219,39,119,0.35)]
       "
     >
-      {/* subtle gradient overlay */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-br from-purple-600/10 via-transparent to-pink-600/10 opacity-0 group-hover:opacity-100 transition duration-500" />
 
       <div className="pt-6 pb-8 px-6 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] flex flex-col h-full">

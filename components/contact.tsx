@@ -22,7 +22,7 @@ const Contact = () => {
       viewport={{ once: true }}
     >
       {/* Subtle glow background */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-purple-600/10 via-pink-600/10 to-purple-600/10 blur-3xl rounded-3xl" />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-black-600/10 via-pink-600/10 to-black-600/10 blur-3xl rounded-3xl" />
 
       <SectionHeading>Contact Me</SectionHeading>
 

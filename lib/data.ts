@@ -38,7 +38,7 @@ export const experiencesData = [
     title: "Associate Software Engineer",
     company: "Naxxa consulting",
     description:
-      "In my last year of univeristy I started my internship in Naxxa consulting and then promoted to Associate engineer",
+      "Contributed to TelyMd, a telehealth platform focused on patient-facing workflows, appointment systems, real-time interactions, and responsive healthcare interfaces.",
     icon: React.createElement(LuGraduationCap),
     date: "2020-2022",
   },
