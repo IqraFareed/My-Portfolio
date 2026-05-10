@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import profile from "@/public/profile.jpeg";
+import profile from "@/public/profile.png";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { HiDownload } from "react-icons/hi";
@@ -60,26 +60,28 @@ const IntroSection = () => {
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            Iqra Fareed
+            IQRA FAREED
           </motion.h1>
         </div>
       </div>
       <motion.h1
-        className="mb-10 mt-2 px-4 text-xl font-medium !leading-[1.5] sm:text-3xl"
+        className="mb-10 mt-2 px-4 text-lg font-medium !leading-[1.5] sm:text-xl"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <span>Hello,</span> I am a{" "}
-        <span className="font-bold">Software Engineer</span> based in the USA
-        with <span className="font-bold">over 5 years</span> of experience
-        building scalable web applications. I specialize in designing reliable,
-        production-ready systems using modern JavaScript frameworks and backend
-        services. My work spans front-end architecture, API integrations, and
-        performance optimization. I am currently pursuing my Master’s in
-        Computer Science at the University of Louisiana, where I continue
-        strengthening my software engineering principles. My primary expertise
-        includes{" "}
-        <span className="underline">React.js, Next.js, and Node.js</span>
+        <span>
+          Hello, I am a Software Engineer based in the USA with over 5 years of
+          experience building scalable web applications, real-time systems, and
+          data-driven platforms. I specialize in designing production-ready
+          full-stack applications, developing modern frontend architectures,
+          integrating backend services and APIs, and optimizing system
+          performance. Alongside industry experience, I am currently pursuing my
+          Master’s in Computer Science at the University of Louisiana at
+          Lafayette, where I am also involved in research focused on trustworthy
+          AI and medical imaging at the intersection of AI systems, HCI, and
+          healthcare. My interests include full-stack engineering, AI-powered
+          systems, intelligent workflows, and human-centered applications.
+        </span>
       </motion.h1>
 
       <motion.div
