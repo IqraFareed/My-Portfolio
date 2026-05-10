@@ -65,7 +65,7 @@ const IntroSection = () => {
         </div>
       </div>
       <motion.h1
-        className="mb-10 mt-2 px-4 text-lg font-medium !leading-[1.5] sm:text-xl"
+        className="mb-10 mt-2 px-4 text-lg font-medium !leading-[1.5] sm:text-xl mx-[10rem]"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
@@ -85,7 +85,7 @@ const IntroSection = () => {
       </motion.h1>
 
       <motion.div
-        className="flex flex-col sm:flex-row items-center justify-center px-4 text-md font-medium gap-3"
+        className="flex flex-col sm:flex-row items-center justify-center px-4 text-md font-medium gap-3 mb-[4rem]"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1 }}
@@ -103,6 +103,7 @@ const IntroSection = () => {
           <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />{" "}
         </Link> */}
 
+        {/* 
         <Link
           href={
             "https://drive.google.com/file/d/1my6Gc6Rg6qJtlzmUvdgJsM5qW6eAhFT-/view?usp=sharing"
@@ -115,7 +116,7 @@ const IntroSection = () => {
         >
           Click here to view CV{" "}
           <HiDownload className="opacity-60 group-hover:translate-y-1 transition" />
-        </Link>
+        </Link> */}
       </motion.div>
     </motion.section>
   );

@@ -88,43 +88,144 @@ export const projectsData = [
 
 export const skillsData = [
   // Languages
-  "JavaScript",
-  "TypeScript",
+  {
+    name: "JavaScript",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+  },
+  {
+    name: "TypeScript",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+  },
+  {
+    name: "Python",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+  },
 
   // Frontend
-  "HTML",
-  "CSS",
-  "React.js",
-  "Next.js",
-  "Redux ",
-  "Tailwind CSS",
-
-  "Framer Motion",
+  {
+    name: "HTML",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+  },
+  {
+    name: "CSS",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+  },
+  {
+    name: "React.js",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+  },
+  {
+    name: "Next.js",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+  },
+  {
+    name: "Redux Toolkit",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg",
+  },
+  {
+    name: "Tailwind CSS",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
+  },
+  {
+    name: "Material UI",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg",
+  },
+  {
+    name: "Framer Motion",
+    logo: "https://framerusercontent.com/images/EYJVyF4Kz8BFNDKzZ5V0WsqI.svg",
+  },
 
   // Backend
-  "Node.js",
-  "Express.js",
+  {
+    name: "Node.js",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+  },
+  {
+    name: "Express.js",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+  },
 
   // APIs & Realtime
-  "RESTful APIs",
-  "GraphQL",
-  "WebSockets",
-  "Axios",
-  "React Query",
+  {
+    name: "REST APIs",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg",
+  },
+  {
+    name: "GraphQL",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg",
+  },
+  {
+    name: "WebSockets",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/socketio/socketio-original.svg",
+  },
+  {
+    name: "Axios",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/axios/axios-plain.svg",
+  },
+  {
+    name: "TanStack Query",
+    logo: "https://tanstack.com/favicon.ico",
+  },
 
-  // Databases
-  "MongoDB",
-  "Firebase",
+  // Databases & Backend Services
+  {
+    name: "MongoDB",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+  },
+  {
+    name: "Firebase",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg",
+  },
 
   // Cloud & DevOps
-  "AWS",
+  {
+    name: "AWS",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg",
+  },
+
+  // AI & Data
+  {
+    name: "Machine Learning",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg",
+  },
+  {
+    name: "AI Systems",
+    logo: "https://cdn-icons-png.flaticon.com/512/2103/2103832.png",
+  },
+  {
+    name: "Data Visualization",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/d3js/d3js-original.svg",
+  },
 
   // Tools
-  "Git",
+  {
+    name: "Git",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+  },
+  {
+    name: "Figma",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
+  },
 
   // Core Concepts
-  "Data Structures",
-  "Unit testing",
-  "Web Optimization",
-  "Agile/SCRUM",
+  {
+    name: "Data Structures",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg",
+  },
+  {
+    name: "Unit Testing",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg",
+  },
+  {
+    name: "Web Optimization",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/webpack/webpack-original.svg",
+  },
+  {
+    name: "Responsive Design",
+    logo: "https://cdn-icons-png.flaticon.com/512/1828/1828919.png",
+  },
+  {
+    name: "Agile/SCRUM",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg",
+  },
 ] as const;
