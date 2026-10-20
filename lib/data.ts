@@ -5,227 +5,180 @@ import { LuGraduationCap } from "react-icons/lu";
 import ts from "@/public/tripshepherd.png";
 import robor from "@/public/robor.png";
 import coding from "@/public/coding.webp";
+import matrix from "@/public/matrix-356024_1280.webp";
 
 export const links = [
-  {
-    name: "Home",
-    hash: "#home",
-  },
-  // {
-  //   name: "About",
-  //   hash: "#about",
-  // },
-  {
-    name: "Projects",
-    hash: "#projects",
-  },
-  {
-    name: "Skills",
-    hash: "#skills",
-  },
-  {
-    name: "Experience",
-    hash: "#experience",
-  },
-  {
-    name: "Contact",
-    hash: "#contact",
-  },
+  { name: "Home", hash: "#home" },
+  { name: "About", hash: "#about" },
+  { name: "Work", hash: "#projects" },
+  { name: "Experience", hash: "#experience" },
+  { name: "Skills", hash: "#skills" },
+  { name: "Education", hash: "#education" },
+  { name: "Contact", hash: "#contact" },
 ] as const;
 
 export const experiencesData = [
   {
-    title: "Associate Software Engineer",
-    company: "Naxxa consulting",
+    title: "May 2024 — Aug 2025",
+    company: "TripShepherd",
+    role: "Front-End Lead Developer",
     description:
-      "Contributed to TelyMd, a telehealth platform focused on patient-facing workflows, appointment systems, real-time interactions, and responsive healthcare interfaces.",
-    icon: React.createElement(LuGraduationCap),
-    date: "2020-2022",
-  },
-  {
-    title: "Front-End Developer",
-    company: "Qisst pay",
-    description:
-      " Worked on the Merchant portal, a CMS handling various operations and data records.Collaborated on the 1-click-checkout and Askari Mall ecommerce website",
-    icon: React.createElement(CgWorkAlt),
-    date: "2022-2023",
-  },
-  {
-    title: "Senior Front end Developer",
-    company: "Tripshepherd",
-    description:
-      "Worked on product called BOAT App 	Central availability & reservation platform unifying inventory, dynamic pricing and capacity rules for maritime products",
+      "Led frontend development for production travel and reservation experiences using React and Next.js. Worked across application architecture, reusable UI, state management, responsive workflows, Firebase integrations, and product delivery while collaborating with design, backend, QA, and product teams.",
+    highlights: [
+      "React and Next.js application development",
+      "Reusable UI and state-management patterns",
+      "Reservation, availability, and product workflows",
+      "Firebase and API integration",
+      "Figma-to-production implementation and QA collaboration",
+    ],
     icon: React.createElement(FaReact),
-    date: "2024 - 2025",
+    date: "May 2024 — Aug 2025",
+  },
+  {
+    title: "Sep 2022 — Aug 2023",
+    company: "Qisstpay",
+    role: "Senior Front-End Developer",
+    description:
+      "Built fintech and commerce experiences with React, Next.js, and TypeScript. Contributed to merchant-facing products, reusable components, application state, REST integrations, and data-heavy interfaces including dashboard visualizations.",
+    highlights: [
+      "React, Next.js, and TypeScript development",
+      "Redux Toolkit application state",
+      "REST API integration with Java and Go services",
+      "ApexCharts data visualization",
+      "MUI and Tailwind-based responsive interfaces",
+    ],
+    icon: React.createElement(CgWorkAlt),
+    date: "Sep 2022 — Aug 2023",
+  },
+  {
+    title: "Nov 2020 — Aug 2022",
+    company: "Naxxa Consulting",
+    role: "Front-End Developer",
+    description:
+      "Developed interactive client applications and translated product designs into responsive interfaces. Worked across REST and GraphQL APIs, forms, animation, reusable components, and real-time application functionality.",
+    highlights: [
+      "React and Material UI application development",
+      "REST and GraphQL API integration",
+      "AWS AppSync real-time subscriptions",
+      "Formik/Yup form workflows",
+      "Framer Motion and GSAP interactions",
+    ],
+    icon: React.createElement(LuGraduationCap),
+    date: "Nov 2020 — Aug 2022",
   },
 ] as const;
 
 export const projectsData = [
   {
-    title: "BOAT APP",
+    number: "01",
+    title: "BOAT — Maritime Reservation Platform",
+    category: "Production · Travel / Reservations",
     description:
-      "I worked as a next-js developer on this platform  that  provide Central availability & reservation platform unifying inventory, dynamic pricing and capacity rules for maritime products.",
-    tags: ["firebase", "Next.js", "tailwind", "AWS", "Axios"],
+      "A centralized availability and reservation platform for maritime products, bringing inventory, availability, dynamic pricing, and capacity rules into a unified workflow.",
+    role: "Front-End Lead Developer",
+    tags: ["Next.js", "React", "Firebase", "Tailwind CSS", "AWS", "Axios"],
     imageUrl: ts,
-    link: "boat.tripshepherd.com",
+    link: "https://boat.tripshepherd.com",
+    kind: "engineering",
   },
   {
-    title: "Robor Website",
-    description: "It's a responsive website for a saas based startup",
-    tags: ["Next.js", "Tailwind", "framer motion"],
-    imageUrl: robor,
-    link: "https://robor.systems/",
-  },
-  {
-    title: "Tely Md",
+    number: "02",
+    title: "Merchant Portal",
+    category: "Production · Fintech",
     description:
-      "A public web app for Online medical consult . It connects doctors and pateints remotely. It's a new way of medicie",
-    tags: ["React", "Material ui", "Redux", "Tailwind", "Framer"],
+      "A merchant-facing web platform supporting operational workflows, data management, and commerce operations. The frontend emphasized reusable components, state management, responsive UI, and API-driven workflows.",
+    role: "Senior Front-End Developer",
+    tags: ["React", "Next.js", "TypeScript", "Redux Toolkit", "MUI", "REST APIs", "ApexCharts"],
+    imageUrl: robor,
+    link: "",
+    kind: "engineering",
+  },
+  {
+    number: "03",
+    title: "TelyMD",
+    category: "Production · Healthcare / Telemedicine",
+    description:
+      "A healthcare web application connecting patients and healthcare providers through remote consultation workflows and responsive user experiences.",
+    role: "Front-End Developer",
+    tags: ["React", "Material UI", "Redux", "Tailwind CSS", "Framer Motion"],
     imageUrl: coding,
     link: "",
+    kind: "engineering",
+  },
+  {
+    number: "04",
+    title: "Robor",
+    category: "SaaS · Marketing Website",
+    description:
+      "A responsive SaaS website focused on modern product presentation, responsive layouts, reusable sections, and motion-driven interactions.",
+    role: "Front-End Developer",
+    tags: ["Next.js", "Tailwind CSS", "Framer Motion"],
+    imageUrl: robor,
+    link: "https://robor.systems/",
+    kind: "engineering",
+  },
+  {
+    number: "05",
+    title: "Uncertainty Quantification in Large Language Models",
+    category: "Research · LLM Reliability",
+    description:
+      "An ongoing survey of methods for detecting and quantifying uncertainty in Large Language Models. The work organizes literature across detection, mitigation, human alignment, evaluation, and open research challenges.",
+    role: "Graduate Research / Survey Research",
+    tags: ["LLMs", "Uncertainty Quantification", "Calibration", "Semantic Uncertainty", "Hallucination Detection", "Human-AI Interaction"],
+    imageUrl: matrix,
+    link: "",
+    kind: "research",
+  },
+  {
+    number: "06",
+    title: "Graph Representation Learning & Node Classification",
+    category: "Research Project · Machine Learning",
+    description:
+      "An academic investigation of graph representation learning using Cora and CiteSeer. The project compares DeepWalk and Graph Convolutional Networks for node classification and evaluates learned representations with accuracy and AUC.",
+    role: "Graduate Machine Learning Project",
+    tags: ["Python", "PyTorch Geometric", "DeepWalk", "GCN", "Word2Vec", "Cora", "CiteSeer"],
+    imageUrl: matrix,
+    link: "",
+    kind: "research",
+  },
+  {
+    number: "07",
+    title: "Medical AI Research",
+    category: "Research · Artificial Intelligence in Healthcare",
+    description:
+      "Current graduate research exploring the application of AI and machine learning to healthcare-related problems, with broader interests in reliable AI, uncertainty, and human-centered AI systems.",
+    role: "Graduate Researcher",
+    tags: ["Medical AI", "Machine Learning", "Reliable AI", "Uncertainty", "Human-AI Interaction"],
+    imageUrl: coding,
+    link: "",
+    kind: "research",
   },
 ] as const;
 
-export const skillsData = [
-  // Languages
+export const skillGroups = [
   {
-    name: "JavaScript",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+    title: "Frontend Engineering",
+    description: "Core technologies I use to build production interfaces and applications.",
+    skills: ["React", "Next.js", "TypeScript", "JavaScript (ES6+)", "HTML5", "CSS3", "Tailwind CSS", "Material UI", "Redux Toolkit", "Framer Motion"],
   },
   {
-    name: "TypeScript",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+    title: "UI, UX & Web Quality",
+    description: "Practices that support polished, responsive, maintainable user experiences.",
+    skills: ["Responsive Design", "Figma to UI", "Component Architecture", "Design Patterns", "Web Performance", "SEO", "Semantic HTML", "Accessibility Fundamentals", "Cross-browser UI"],
   },
   {
-    name: "Python",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
-  },
-
-  // Frontend
-  {
-    name: "HTML",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+    title: "Data, APIs & Application State",
+    description: "Connecting frontend applications to real-world product workflows and services.",
+    skills: ["REST APIs", "GraphQL", "Axios", "Firebase", "AWS AppSync", "WebSockets", "Redux Toolkit", "Formik", "Yup", "ApexCharts"],
   },
   {
-    name: "CSS",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+    title: "Cloud, Tools & Workflow",
+    description: "Tools used across development, collaboration, deployment, and delivery.",
+    skills: ["Git", "GitHub", "AWS", "Vercel", "Figma", "Jira / Agile", "Code Review", "AI-assisted Development"],
   },
   {
-    name: "React.js",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-  },
-  {
-    name: "Next.js",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
-  },
-  {
-    name: "Redux Toolkit",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg",
-  },
-  {
-    name: "Tailwind CSS",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
-  },
-  {
-    name: "Material UI",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg",
-  },
-  {
-    name: "Framer Motion",
-    logo: "https://framerusercontent.com/images/EYJVyF4Kz8BFNDKzZ5V0WsqI.svg",
-  },
-
-  // Backend
-  {
-    name: "Node.js",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
-  },
-  {
-    name: "Express.js",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
-  },
-
-  // APIs & Realtime
-  {
-    name: "REST APIs",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg",
-  },
-  {
-    name: "GraphQL",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg",
-  },
-  {
-    name: "WebSockets",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/socketio/socketio-original.svg",
-  },
-  {
-    name: "Axios",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/axios/axios-plain.svg",
-  },
-  {
-    name: "TanStack Query",
-    logo: "https://tanstack.com/favicon.ico",
-  },
-
-  // Databases & Backend Services
-  {
-    name: "MongoDB",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
-  },
-  {
-    name: "Firebase",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg",
-  },
-
-  // Cloud & DevOps
-  {
-    name: "AWS",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg",
-  },
-
-  // AI & Data
-  {
-    name: "Machine Learning",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg",
-  },
-  {
-    name: "AI Systems",
-    logo: "https://cdn-icons-png.flaticon.com/512/2103/2103832.png",
-  },
-  {
-    name: "Data Visualization",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/d3js/d3js-original.svg",
-  },
-
-  // Tools
-  {
-    name: "Git",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
-  },
-  {
-    name: "Figma",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
-  },
-
-  // Core Concepts
-  {
-    name: "Data Structures",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg",
-  },
-  {
-    name: "Unit Testing",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg",
-  },
-  {
-    name: "Web Optimization",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/webpack/webpack-original.svg",
-  },
-  {
-    name: "Responsive Design",
-    logo: "https://cdn-icons-png.flaticon.com/512/1828/1828919.png",
-  },
-  {
-    name: "Agile/SCRUM",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg",
+    title: "AI / Machine Learning",
+    description: "Graduate-level research and project experience beyond my primary frontend specialization.",
+    skills: ["Python", "Machine Learning", "PyTorch Geometric", "Graph Representation Learning", "Large Language Models", "Uncertainty Quantification", "Medical AI"],
   },
 ] as const;

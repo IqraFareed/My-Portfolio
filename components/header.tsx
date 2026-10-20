@@ -1,61 +1,62 @@
 "use client";
+
 import React from "react";
 import { motion } from "framer-motion";
 import { links } from "@/lib/data";
 import Link from "next/link";
 import clsx from "clsx";
 import { useActiveSectionContext } from "@/context/active-section-context";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa";
+import { HiDownload } from "react-icons/hi";
+
 const Header = () => {
-  const { activeSection, setActiveSection, setTimeOfLastClick } =
-    useActiveSectionContext();
+  const { activeSection, setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
 
   return (
-    <header className="z-[999] relative">
-      <motion.div
-        className="fixed top-0 left-1/2  h-[4.5rem] w-full rounded-none border  border-opacity-40 
-        bg-transparent bg-opacity-80 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] sm:top-6 sm:h-[3.25rem]
-         sm:w-[36rem] sm:rounded-full dark:bg-gray-950 dark:border-black/40
-        dark:bg-opacity-75 "
-        initial={{ y: -100, x: "-50%", opacity: 0 }}
-        animate={{ y: 0, x: "-50%", opacity: 1 }}
-      ></motion.div>
-      <nav className="flex fixed top-[0.15rem] left-1/2 h-12 -translate-x-1/2 py-2 sm:top-[1.7rem] sm:h-[initial] sm:py-0">
-        <ul className="flex w-[22rem] flex-wrap items-center justify-center gap-y-1 text-[0.9rem] font-medium text-gray-500 sm:w-[initial] sm:flex-nowrap sm:gap-5">
-          {links?.map((link) => (
-            <motion.li
-              className="h-3/4 flex items-center justify-center relative"
-              key={link?.hash}
-              initial={{ y: -100, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-            >
-              <Link
-                className={clsx(
-                  "flex w-full items-center justify-center  px-3 py-3   hover:text-gray-950 transition dark:text-gray-500 dark:hover:text-gray-300",
-                  {
-                    "text-gray-950 dark:text-gray-200":
-                      activeSection === link?.name,
-                  },
-                )}
-                href={link?.hash}
-                onClick={() => {
-                  setTimeOfLastClick(Date.now());
-                  setActiveSection(link?.name);
-                }}
-              >
-                {" "}
-                {link?.name}
-                {activeSection === link?.name && (
-                  <motion.span
-                    className="bg-gray-100 rounded-full absolute inset-0 -z-10 dark:bg-gray-800"
-                    layoutId="activeSection"
-                    transition={{ type: "spring", stiffness: 380, damping: 40 }}
-                  ></motion.span>
-                )}
-              </Link>
-            </motion.li>
-          ))}
-        </ul>
-      </nav>
+    <header className="fixed left-0 right-0 top-0 z-50 px-4 pt-3 sm:px-6 sm:pt-5">
+      <div className="mx-auto flex h-14 max-w-6xl items-center justify-between rounded-2xl border border-white/10 bg-[#0b0c0f]/85 px-3 shadow-2xl shadow-black/20 backdrop-blur-xl sm:px-4">
+        <Link href="#home" className="focus-ring flex items-center gap-2 rounded-lg px-2 text-sm font-semibold tracking-tight text-white">
+          <span className="grid h-8 w-8 place-items-center rounded-lg bg-blue-500/10 text-blue-400">IF</span>
+          <span className="hidden sm:block">Iqra Fareed</span>
+        </Link>
+
+        <nav aria-label="Primary navigation" className="hidden md:block">
+          <ul className="flex items-center gap-1">
+            {links.map((link) => (
+              <li key={link.hash}>
+                <Link
+                  href={link.hash}
+                  className={clsx(
+                    "relative rounded-lg px-3 py-2 text-xs font-medium transition focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400",
+                    activeSection === link.name ? "text-white" : "text-zinc-400 hover:text-white"
+                  )}
+                  onClick={() => {
+                    setTimeOfLastClick(Date.now());
+                    setActiveSection(link.name);
+                  }}
+                >
+                  {activeSection === link.name && (
+                    <motion.span layoutId="active-nav" className="absolute inset-0 -z-10 rounded-lg bg-white/[0.07]" />
+                  )}
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <div className="flex items-center gap-1">
+          <a aria-label="GitHub" href="https://github.com/IqraFareed" target="_blank" rel="noreferrer" className="focus-ring rounded-lg p-2 text-zinc-400 transition hover:bg-white/5 hover:text-white">
+            <FaGithub />
+          </a>
+          <a aria-label="LinkedIn" href="https://www.linkedin.com/in/iqra-fareed-2701871a5/" target="_blank" rel="noreferrer" className="focus-ring rounded-lg p-2 text-zinc-400 transition hover:bg-white/5 hover:text-white">
+            <FaLinkedinIn />
+          </a>
+          <a href="/CV.pdf" target="_blank" className="focus-ring ml-1 hidden items-center gap-1.5 rounded-lg border border-white/10 bg-white px-3 py-2 text-xs font-semibold text-zinc-900 transition hover:bg-zinc-200 sm:flex">
+            Resume <HiDownload />
+          </a>
+        </div>
+      </div>
     </header>
   );
 };

@@ -2,13 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  --line-color: #e5e7eb;
-}
-html.dark {
-  --line-color: rgba(255, 255, 255, 0.2);
+:root {
+  color-scheme: dark;
+  --background: #08090b;
+  --foreground: #f5f7fa;
+  --muted: #9ca3af;
+  --border: rgba(255, 255, 255, 0.1);
+  --accent: #60a5fa;
 }
 
-.borderBlack {
-  @apply border border-black/10;
+html {
+  scroll-behavior: smooth;
+  background: var(--background);
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 75% 0%, rgba(37, 99, 235, 0.09), transparent 28rem),
+    radial-gradient(circle at 10% 35%, rgba(14, 165, 233, 0.05), transparent 24rem),
+    var(--background);
+  color: var(--foreground);
+}
+
+::selection {
+  background: rgba(96, 165, 250, 0.3);
+  color: white;
+}
+
+@layer utilities {
+  .section-shell {
+    @apply mx-auto w-full max-w-6xl;
+  }
+
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.2em] text-blue-400;
+  }
+
+  .section-title {
+    @apply text-3xl font-semibold tracking-tight text-white sm:text-4xl;
+  }
+
+  .muted {
+    @apply text-zinc-400;
+  }
+
+  .surface {
+    @apply border border-white/10 bg-white/[0.035];
+  }
+
+  .focus-ring {
+    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400/70 focus-visible:ring-offset-2 focus-visible:ring-offset-[#08090b];
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

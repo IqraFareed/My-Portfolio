@@ -1,117 +1,62 @@
 "use client";
 
 import React, { useRef } from "react";
-import { projectsData } from "@/lib/data";
+import { motion, useInView } from "framer-motion";
 import Image from "next/image";
-import { useScroll, motion, useTransform } from "framer-motion";
 import Link from "next/link";
+import { HiArrowUpRight } from "react-icons/hi2";
+import type { projectsData } from "@/lib/data";
 
 type ProjectProps = (typeof projectsData)[number];
 
-const Project = ({
-  title,
-  description,
-  tags,
-  imageUrl,
-  link,
-}: ProjectProps) => {
+const Project = ({ number, title, category, description, role, tags, imageUrl, link, kind }: ProjectProps) => {
   const ref = useRef<HTMLElement>(null);
-
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["0 1", "1.33 1"],
-  });
-
-  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.85, 1]);
-  const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
+  const inView = useInView(ref, { once: true, margin: "-80px" });
+  const isResearch = kind === "research";
 
   return (
-    <motion.section
+    <motion.article
       ref={ref}
-      style={{
-        scale: scaleProgress,
-        opacity: opacityProgress,
-      }}
-      className="
-        group relative
-        max-w-[42rem]
-          min-h-[25rem]
-        rounded-2xl
-        border border-white/10
-        bg-white/5
-        backdrop-blur-xl
-        shadow-[0_0_40px_rgba(168,85,247,0.15)]
-        overflow-hidden
-        mb-6 sm:mb-10
-        transition-all duration-500
-        hover:shadow-[0_0_60px_rgba(219,39,119,0.35)]
-      "
+      initial={{ opacity: 0, y: 28 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.55 }}
+      className={`group grid overflow-hidden rounded-3xl border md:grid-cols-[1.05fr_.95fr] ${
+        isResearch ? "border-blue-400/15 bg-blue-400/[0.025]" : "border-white/10 bg-white/[0.025]"
+      }`}
     >
-      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-purple-600/10 via-transparent to-pink-600/10 opacity-0 group-hover:opacity-100 transition duration-500" />
-
-      <div className="pt-6 pb-8 px-6 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] flex flex-col h-full">
-        <h3 className="text-2xl font-semibold text-white tracking-wide">
-          {title}
-        </h3>
-
-        <p className="mt-3 leading-relaxed text-gray-300">{description}</p>
-
-        <Link
-          href={link?.startsWith("http") ? link : `https://${link}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="
-            my-3 inline-block
-            text-pink-400
-            hover:text-pink-300
-            underline underline-offset-4
-            transition-colors
-          "
-          prefetch={false}
-        >
-          {link}
-        </Link>
-
-        <ul className="flex flex-wrap mt-5 gap-2 sm:mt-auto">
-          {tags.map((tag, index) => (
-            <li
-              key={index}
-              className="
-                px-3 py-1 text-[0.7rem]
-                rounded-full
-                bg-gradient-to-r
-                from-purple-600/30
-                to-pink-600/30
-                border border-white/10
-                text-white/80
-                backdrop-blur-md
-              "
-            >
-              {tag}
-            </li>
-          ))}
-        </ul>
+      <div className="relative min-h-[260px] overflow-hidden border-b border-white/10 bg-zinc-950 md:min-h-[380px] md:border-b-0 md:border-r">
+        <Image src={imageUrl} alt={`${title} project preview`} fill className="object-cover object-top opacity-80 transition duration-700 group-hover:scale-[1.025] group-hover:opacity-100" sizes="(max-width: 768px) 100vw, 50vw" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+        <span className="absolute left-5 top-5 rounded-full border border-white/10 bg-black/60 px-3 py-1 text-[11px] font-medium text-zinc-200 backdrop-blur-md">
+          {isResearch ? "Research" : `Project ${number}`}
+        </span>
       </div>
 
-      <Image
-        src={imageUrl}
-        alt={title}
-        quality={95}
-        className="
-          absolute hidden sm:block
-          top-10 -right-40
-          w-[28rem]
-          rounded-xl
-          shadow-[0_20px_60px_rgba(0,0,0,0.5)]
-          transition-all duration-500
+      <div className="flex flex-col p-7 sm:p-9">
+        <div className="flex items-start justify-between gap-4">
+          <div>
+            <p className="text-xs font-medium uppercase tracking-[0.14em] text-blue-400">{category}</p>
+            <h3 className="mt-2 text-2xl font-semibold tracking-tight text-white">{title}</h3>
+          </div>
+          {link && (
+            <Link href={link} target="_blank" rel="noreferrer" aria-label={`Open ${title}`} className="focus-ring rounded-full border border-white/10 p-2 text-zinc-400 transition hover:bg-white/5 hover:text-white">
+              <HiArrowUpRight />
+            </Link>
+          )}
+        </div>
 
-          group-hover:-translate-x-4
-          group-hover:translate-y-4
-          group-hover:-rotate-3
-          group-hover:scale-105
-        "
-      />
-    </motion.section>
+        <p className="mt-5 text-sm leading-7 text-zinc-400">{description}</p>
+        <p className="mt-5 text-xs font-medium text-zinc-500">Role: <span className="text-zinc-300">{role}</span></p>
+
+        <div className="mt-auto flex flex-wrap gap-2 pt-7">
+          {tags.map((tag) => (
+            <span key={tag} className="rounded-full border border-white/10 bg-white/[0.03] px-2.5 py-1 text-[11px] text-zinc-400">{tag}</span>
+          ))}
+        </div>
+
+        {!link && <span className="mt-5 text-xs text-zinc-600">{isResearch ? "Ongoing / academic work" : "Private / production application"}</span>}
+      </div>
+    </motion.article>
   );
 };
 

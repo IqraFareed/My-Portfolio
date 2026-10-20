@@ -3,62 +3,39 @@
 import React from "react";
 import SectionHeading from "./section-heading";
 import { experiencesData } from "@/lib/data";
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from "react-vertical-timeline-component";
-import "react-vertical-timeline-component/style.min.css";
 import { useSectionInView } from "@/lib/hooks";
-import { useTheme } from "@/context/theme-context";
+import { motion } from "framer-motion";
 
 const Experience = () => {
-  const { theme } = useTheme();
   const { ref } = useSectionInView("Experience", 0.25);
 
   return (
-    <section
-      ref={ref}
-      id="experience"
-      className="scroll-mt-28 mb-32 sm:mb-40 relative"
-    >
-      <SectionHeading>My Experience</SectionHeading>
+    <section ref={ref} id="experience" className="section-shell scroll-mt-28 pb-28 sm:pb-36">
+      <SectionHeading
+        eyebrow="Professional experience"
+        title="5+ years building production frontend software"
+        description="Experience across travel, fintech, healthcare, SaaS, and data-driven products, with a focus on React, Next.js, TypeScript, UI architecture, and product delivery."
+      />
 
-      <VerticalTimeline lineColor="rgba(168,85,247,0.4)">
-        {experiencesData?.map((data, index) => (
-          <VerticalTimelineElement
-            key={index}
-            visible={true}
-            contentStyle={{
-              background: "rgba(255,255,255,0.05)",
-              backdropFilter: "blur(12px)",
-              border: "1px solid rgba(255,255,255,0.1)",
-              boxShadow: "0 0 40px rgba(168,85,247,0.15)",
-              borderRadius: "16px",
-              padding: "1.8rem 2rem",
-              textAlign: "left",
-            }}
-            contentArrowStyle={{
-              borderRight: "0.4rem solid rgba(168,85,247,0.4)",
-            }}
-            date={data?.title}
-            dateClassName="text-purple-300 font-medium"
-            icon={data.icon}
-            iconStyle={{
-              background: "linear-gradient(135deg, #6d28d9, #db2777)",
-              color: "white",
-              boxShadow: "0 0 30px rgba(219,39,119,0.5)",
-            }}
-          >
-            <h3 className="font-semibold text-white text-lg">
-              {data?.company}
-            </h3>
-
-            <p className="mt-2 text-gray-300 leading-relaxed">
-              {data?.description}
-            </p>
-          </VerticalTimelineElement>
+      <div className="mt-12 border-t border-white/10">
+        {experiencesData.map((item, index) => (
+          <motion.article key={item.company} initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.08 }} className="grid gap-5 border-b border-white/10 py-9 md:grid-cols-[190px_1fr] md:gap-10">
+            <p className="text-xs font-medium uppercase tracking-[0.12em] text-zinc-500">{item.date}</p>
+            <div>
+              <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                <h3 className="text-xl font-semibold text-white">{item.role}</h3>
+                <p className="text-sm font-medium text-blue-400">{item.company}</p>
+              </div>
+              <p className="mt-4 max-w-3xl text-sm leading-7 text-zinc-400">{item.description}</p>
+              <div className="mt-5 flex flex-wrap gap-2">
+                {item.highlights.map((highlight) => (
+                  <span key={highlight} className="rounded-full border border-white/10 bg-white/[0.02] px-3 py-1.5 text-[11px] text-zinc-500">{highlight}</span>
+                ))}
+              </div>
+            </div>
+          </motion.article>
         ))}
-      </VerticalTimeline>
+      </div>
     </section>
   );
 };

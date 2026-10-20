@@ -4,74 +4,32 @@ import "./globals.css";
 import Header from "@/components/header";
 import ActiveSectionContextProvider from "@/context/active-section-context";
 import { Toaster } from "react-hot-toast";
-import Footer from "@/components/Footer";
-import ThemeSwitch from "@/components/themeSwitch";
 import ThemeContextProvider from "@/context/theme-context";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Portfolio",
-  description: "Software Engineer | React, Next.js, Full-Stack Development",
+  title: "Iqra Fareed | Front-End Engineer",
+  description:
+    "Front-End Engineer with 5+ years of experience building production web applications with React, Next.js, and TypeScript. M.S. Computer Science student at the University of Louisiana at Lafayette.",
+  openGraph: {
+    title: "Iqra Fareed | Front-End Engineer",
+    description:
+      "React, Next.js and TypeScript engineer building polished, scalable web experiences.",
+    type: "website",
+    url: "https://iqrafareed-portfolio-site.vercel.app/",
+  },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className="!scroll-smooth">
-      <body
-        className={`
-           ${inter.className}
-    relative min-h-screen
-    bg-gradient-to-br from-[#0f0f0f] via-[#1a1a1a] to-[#0a0520]
-    text-gray-100
-    pt-28 sm:pt-36
-    overflow-x-hidden
-    dark:from-[#120826] dark:via-[#1b0f3a] dark:to-black
-        `}
-      >
-        {/* Electric Pink Glow (Top Right) */}
-        <div
-          className="
-            absolute top-[-10rem] right-[-5rem] -z-10
-            h-[35rem] w-[35rem]
-            rounded-full
-            bg-pink-600/40
-            blur-[140px]
-            animate-pulse
-          "
-        />
-
-        {/* Deep Purple Glow (Left Side) */}
-        <div
-          className="
-            absolute top-[5rem] left-[-15rem] -z-10
-            h-[40rem] w-[40rem]
-            rounded-full
-           bg-[#130824]
-            blur-[150px]
-            animate-pulse
-          "
-        />
-
-        {/* Subtle Radial Overlay Texture */}
-        <div
-          className="
-            pointer-events-none absolute inset-0 -z-10
-            bg-[radial-gradient(circle_at_30%_20%,rgba(219,39,119,0.15),transparent_40%)]
-          "
-        />
-
+      <body className={`${inter.className} min-h-screen overflow-x-hidden pt-20 sm:pt-24`}>
         <ThemeContextProvider>
           <ActiveSectionContextProvider>
             <Header />
             {children}
-            <Footer />
             <Toaster position="top-right" />
-            {/* <ThemeSwitch /> */}
           </ActiveSectionContextProvider>
         </ThemeContextProvider>
       </body>

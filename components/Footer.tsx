@@ -1,40 +1,18 @@
 import React from "react";
-import { FaGithubSquare } from "react-icons/fa";
-import { BsArrowRight, BsLinkedin } from "react-icons/bs";
-const Footer = () => {
-  return (
-    <footer className="mb-10 px-4 text-center text-white">
-      <small className="mb-2 block text-xs">
-        &copy; 2030 Ricardo. All rights reserved
-      </small>
-      <p className="text-xs">
-        <span className="font-semibold">About this website:</span>built with
-        React & Next.js(App Router & Server Actions), Typescript Tailwind css ,
-        Framer motion , React Email & Resend, Vercel hosting.
-      </p>
-      <div className="flex items-center justify-center gap-2 mt-8 ">
-        {" "}
-        <a
-          href="https://www.linkedin.com/in/iqra-fareed-2701871a5/"
-          target="_blank"
-          className="cursor-pointer bg-white  focus:scale-[1.15] hover:scale-[1.15]  active:scale-[105]
-           transition borderBlack text-gray-700 p-4 flex items-center
-            gap-2 rounded-full dark:bg-white/10 dark:text-white/60"
-        >
-          <BsLinkedin />
-        </a>
-        <a
-          href="https://github.com/IqraFareed"
-          target="_blank"
-          className="cursor-pointer bg-white focus:scale-[1.15] hover:scale-[1.15] 
-           active:scale-[105] transition borderBlack text-gray-700 p-4 
-           flex items-center gap-2 text-[0.95rem] rounded-full dark:bg-white/10 dark:text-white/60"
-        >
-          <FaGithubSquare />
-        </a>
-      </div>
-    </footer>
-  );
-};
+import { FaGithub, FaLinkedinIn } from "react-icons/fa";
+
+const Footer = () => (
+  <footer className="mx-auto flex w-full max-w-6xl flex-col gap-5 border-t border-white/10 py-8 text-xs text-zinc-600 sm:flex-row sm:items-center sm:justify-between">
+    <div>
+      <p>© 2026 Iqra Fareed. All rights reserved.</p>
+      <p className="mt-1">Built with Next.js, TypeScript, Tailwind CSS, and Framer Motion.</p>
+    </div>
+    <div className="flex items-center gap-2">
+      <a aria-label="GitHub" href="https://github.com/IqraFareed" target="_blank" rel="noreferrer" className="focus-ring rounded-lg p-2 transition hover:bg-white/5 hover:text-white"><FaGithub /></a>
+      <a aria-label="LinkedIn" href="https://www.linkedin.com/in/iqra-fareed-2701871a5/" target="_blank" rel="noreferrer" className="focus-ring rounded-lg p-2 transition hover:bg-white/5 hover:text-white"><FaLinkedinIn /></a>
+      <a href="mailto:iqrafareed56@gmail.com" className="focus-ring rounded-lg px-2 py-1 transition hover:text-white">Email</a>
+    </div>
+  </footer>
+);
 
 export default Footer;

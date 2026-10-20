@@ -1,22 +1,28 @@
 "use client";
+
 import React from "react";
 import SectionHeading from "./section-heading";
 import { projectsData } from "@/lib/data";
 import Project from "./project";
-import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
+
 const Projects = () => {
-  const { ref } = useSectionInView("Projects", 0.25);
+  const { ref } = useSectionInView("Work", 0.25);
 
   return (
-    <motion.section ref={ref} id="projects" className="scroll-mt-[12rem] mb-28">
-      <SectionHeading>My Projects </SectionHeading>
-      <div>
-        {projectsData.map((data, index) => (
-          <Project key={index} {...data} />
+    <section ref={ref} id="projects" className="section-shell scroll-mt-28 pb-28 sm:pb-36">
+      <SectionHeading
+        eyebrow="Selected work"
+        title="Production engineering + research"
+        description="A mix of production frontend work and graduate research projects. The first projects highlight my professional engineering experience; the later projects show my current direction in AI and machine learning."
+      />
+
+      <div className="mt-12 space-y-6">
+        {projectsData.map((project) => (
+          <Project key={project.number} {...project} />
         ))}
       </div>
-    </motion.section>
+    </section>
   );
 };
 
